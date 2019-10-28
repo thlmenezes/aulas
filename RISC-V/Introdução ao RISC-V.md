@@ -1,14 +1,4 @@
 [](https://www.markdowntutorial.com/lesson/4/)
-<style>
-    body{
-        display: flex;
-        flex-direction: column;
-        padding: 2em;
-        font-family: Noto Sans;
-        text-align: justify;
-        font-size:  16px;
-    }
-</style>
 
 # Introdução ao Assembly RISC-V
 
