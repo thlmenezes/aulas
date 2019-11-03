@@ -10,7 +10,7 @@
 
 * ### Compacto :
 
-    Código assembly tende a ser mais leve que de outras linguagens, consequentemente requer menos recursos, armazenamento e processamento; economia que pode chegar de ⅓ a ¼ da memória e tempo de execução, ou seja, mais espaço livre que pode ser usado para executar outros serviços ou, simplesmente, economizar energia.
+    Código assembly tende a ser mais leve que de outras linguagens, consequentemente requer menos recursos de armazenamento e processamento; economia que pode chegar de ⅓ a ¼ da memória e tempo de execução, abrindo espaço para execução de outros serviços ou economia de energia.
 
 * ### Liberdade :
 
@@ -22,4 +22,4 @@
 
     Conhecer linguagens de baixo nível é uma experiência que contribui muito ao entendimento sobre arquitetura de computadores e linguagens de programação no geral, porque clareia a formação das abstrações usadas nas linguagens de alto nível (estruturas de dados e controle por exemplo).
 
-    Convida, sutilmente, à crítica, reflexão e busca por conhecimento sobre ferramentas e práticas, que muitas vezes negligenciamos por classificar como banalidades; considero programar em assembly a melhor demonstração sobre importância de documentação e buscar seguir boas práticas de produção, fazendo emergir perguntas: Essa é a melhor abordagem ? Meu código é claro o suficiente ? Dá pra fazer melhor ?
+    Convida, sutilmente, à crítica, reflexão e busca por conhecimento sobre ferramentas e práticas, que muitas vezes negligenciamos por classificar como banalidades; considero programar em assembly a melhor demonstração sobre importância de documentação e buscar seguir boas práticas de produção, por emergir perguntas como: Essa é a melhor abordagem ? Meu código é claro o suficiente ? Dá pra fazer melhor ?
