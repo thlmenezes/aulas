@@ -38,8 +38,8 @@ Observações:
         Caractere Nova Linha (Newline), responsável por "descer uma linha"
         leia sobre em https://pt.wikipedia.org/wiki/Nova_linha
 '''
-
-tela[0][0] = "o"
+cobra_x = cobra_y = 0
+tela[cobra_x][cobra_y] = "o"
 '''
 A cobrinha tem, no inicio, um corpo de
 tamanho 1 no canto superior esquerdo
@@ -56,11 +56,15 @@ representa o 1º elemento da 1ª linha.
 input('Aperte Enter')
 # Menu inicial básico
 
-imprimir(tela)
+imprimirTela = lambda tela : imprimir([list('.'+10*'_'+'.')] + [ ['|'] + linha + ['|'] for linha in tela] + [list('|'+10*'_'+'|')])
+imprimirTela(tela)
 # Imprime o estado do jogo
 
 move = input()
 # Movimentação será usando WASD
+if move.lower()=="w":
+    cobra_y -= 1
+
 cobra = [(0,0)]
 '''
 A cobrinha será representando como um
@@ -74,6 +78,5 @@ ela ocupa na tela
 '''
 TODOs:
 - Movimentação
-- Desenhar bordas da tela
 - Cobrinha morre se tentar sair da tela
 '''
