@@ -60,13 +60,15 @@ imprimirTela = lambda tela : imprimir([list('.'+10*'_'+'.')] + [ ['|'] + linha +
 imprimirTela(tela)
 # Imprime o estado do jogo
 
-move = input()
+from ioCustom import inputchar
+move = inputchar()
 # Movimentação será usando WASD
 if move.lower()=="w":
     cobra_y -= 1
 
-cobra = [(0,0)]
 '''
+cobra = [(0,0)]
+
 A cobrinha será representando como um
 encadeamento de suas "partes", conforme
 ela cresce ela vai ocupando mais espaço
@@ -74,7 +76,6 @@ na tela; armazenamos uma lista de todos
 os pontos, com as coordenadas X e Y, que
 ela ocupa na tela
 '''
-
 '''
 TODOs:
 - Movimentação
