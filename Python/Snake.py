@@ -7,7 +7,7 @@ Modificações:
     def movimenta
     uso de lista de coordenadas
 '''
-''' COPY PASTE 14.11.19
+""" COPY PASTE 14.11.19
 def matriz_repr(matriz:list): return ''.join([ ''.join(linha)+'\n' for linha in matriz ])
 def geraTela(tela:list):\
     return matriz_repr([list('.'+LARGURA*'_'+'.')] + \
@@ -24,7 +24,7 @@ tela[ALTURA//2][LARGURA//2] = 'o'
 input('Aperte Enter')
 
 # Tela de jogo
-print("Para sair pressione ESC",geraTela,sep='\n',end='')
+print("Para sair pressione ESC",geraTela(tela),sep='\n',end='')
 
 # Gameloop
 from ioCustom import kbhit,getch,clear
@@ -33,8 +33,11 @@ while True:
     clear()
     if kbhit():
         move = getch()
-    print("Para sair pressione ESC",geraTela,sep='\n',end='')
-'''
+        cobra_x,cobra_y = cobra[-1]
+        if move.lower() == 'w':
+            cobra_y -= 1
+    print("Para sair pressione ESC",geraTela(tela),sep='\n',end='')
+"""
 ALTURA = LARGURA = 10
 tela = [  list(LARGURA*' ') for _ in range(ALTURA) ]
 # Matriz tela
@@ -107,7 +110,7 @@ def geraTela(tela:list):\
     return matriz_repr([list('.'+LARGURA*'_'+'.')] + \
                        [ ['|'] + linha + ['|'] for linha in tela] + \
                        [list('|'+LARGURA*'_'+'|')])
-print("Para sair pressione ESC",geraTela,sep='\n',end='')
+print("Para sair pressione ESC",geraTela(tela),sep='\n',end='')
 # Imprime o estado do jogo
 def movimenta(matriz: list, atual: tuple, nova: tuple):\
     matriz[atual[1]][atual[0]],matriz[nova[1]][nova[0]] = ' ','o'
@@ -133,7 +136,7 @@ while True:
         movimenta(tela,cobra[-1],(cobra_x,cobra_y))
         cobra.pop()
         cobra.append((cobra_x,cobra_y))
-    print("Para sair pressione ESC",geraTela,sep='\n',end='')
+    print("Para sair pressione ESC",geraTela(tela),sep='\n',end='')
 '''
 TODOs:
 - Movimentação
