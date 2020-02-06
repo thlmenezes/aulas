@@ -25,6 +25,6 @@ for atividade in sorted(afazeres,\
         # Caso aconteça:
         #     inserimos ao nosso dia ideal e
         diaIdeal.append(atividade)
-        last = afazeres[atividade]['fim']
+        fimDia = afazeres[atividade]['fim']
         #     atualizamos o fim do dia.
 print(len(diaIdeal),*diaIdeal,sep='\n')
