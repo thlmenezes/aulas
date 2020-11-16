@@ -1,16 +1,5 @@
 ##############################################################
-# - [x] Apresentar Keyboard MMIO
-#     - [x] equivalências
-#     - [x] pool - echoar comandos no run I/O
-# - [x] Apresentar Bitmap Display
-#     - [x] equivalências
-#     - [x] endereço para x,y
-#     - [x] x,y para endereço
-#     - [x] colorir posição
-# - [x] Desenha linha no Display
-# - [x] Desenhar escada
-#     - [x] Desenhar quadrado
-# - [ ] Puxar cenário de arquivo
+# - [x] Puxar cenário de arquivo
 # - [ ] Goomba
 #     - [ ] Goomba anda
 #     - [ ] Goomba mata player: Troca cor do player
