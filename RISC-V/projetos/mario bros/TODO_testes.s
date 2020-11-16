@@ -1,4 +1,11 @@
 .text
+# BMDisplay - Imprime Quadrado
+# ============================================================
+	li a0, BMP_F0_BEGIN
+	li a1, 0x55    # COR
+	li a2, 40      # Comprimento
+	li a3, 40      # Altura
+	jal BMP_draw_square
 # BMDisplay - Imprime Linha
 # ============================================================
 	BMP_get_address(0,20,BMP_F0_BEGIN)
