@@ -9,53 +9,95 @@
 .eqv FLOAT 2
 .eqv STRING 4
 .eqv CHAR 11
+.eqv EXIT1 10
+.eqv EXIT2 93
+.eqv OPEN_FILE 1024
+.eqv READ_FILE 63
+.eqv CLOSE_FILE 57
 # ============================================================
 #                           MACROS
 # ============================================================
-# system call
-.macro System(%op)
+# ===========================
+# 	System Call
+#
+# ARGUMENTOS
+#
+# %op -: int
+# system operation code
+#
+# ===========================
+.macro syscall(%op)
 	li a7, %op
 	ecall
 .end_macro
-#.macro System(%op, %reg)
-#	li a7, %op
-#	mv a0, %reg
-#	ecall
-#.end_macro
+# ===========================
+# 	Print Registrador
+# Imprime o conteúdo da
+# memória apontada em reg
+# como string
+#
+# ARGUMENTOS
+#
+# %reg -: reg
+# endereço da string
+# 
+# ===========================
 .macro print(%reg)
-	System(STRING,%reg)
+	syscall(STRING,%reg)
 .end_macro
-# Plus Equals +=
+# ===========================
+# 	Plus Equals +=
+# ===========================
 .macro ppr(%reg1,%reg2)
 	add %reg1,%reg1,%reg2
 .end_macro
-# Minus Equals -=
+# ===========================
+# 	Minus Equals -=
+# ===========================
 .macro mmr(%reg1,%reg2)
 	sub %reg1,%reg1,%reg2
 .end_macro
-# Plus Plus ++
+# ===========================
+# 	Plus Plus ++
+# ===========================
 .macro pp(%reg)
 	pp(%reg,1)
 .end_macro
 .macro pp(%reg,%int)
 	addi %reg,%reg,%int
 .end_macro
-# Minus Minus --
+# ===========================
+# 	Minus Minus --
+# ===========================
 .macro mm(%reg)
 	pp(%reg,-1)
 .end_macro
 .macro mm(%reg,%int)
 	pp(%reg,-%int)
 .end_macro
-# Exit default retornando 0
+# ===========================
+# 	Exit Default
+# Encerra o programa com
+# a0 = 0
+# ===========================
 .macro Exit()
-	System(10)  # Exit
+	syscall(EXIT1)
 .end_macro
-# Exit returnando error code
-# 	int -> 0
-.macro Exit(%int)
-	li a0, %int # Error Code
-	System(93) # Exit
+# ===========================
+# 	Exit 2
+# Encerra o programa com um
+# código de erro
+# a0 = %error_code
+#
+# ARGUMENTOS
+#
+# %error_code -: int
+# código de erro
+#
+# ===========================
+.macro Exit(%error_code)
+	li a0, %error_code
+	syscall(EXIT2)
 .end_macro
 # ============================================================
 #                         FUNÇÕES
